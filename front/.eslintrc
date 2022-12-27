@@ -1,0 +1,21 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2019, // ES Version
+    "sourceType": "module", // import, export, require 사용
+    "ecmaFeatures": {
+      "jsx": true // jsx 허용
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended", // eslint 가 추천하는 기본 코딩 스타일
+    "plugin: react/recommended" // react 코딩할때 eslint 가 추천하는 코딩 스타일
+  ],
+  "plugins": [ // 직접 설치해야함
+    "import", // import export 사용 가능하게 하는 plugins
+    "react-hooks" // hooks 사용 가능하게 하는 plugins
+  ]
+}

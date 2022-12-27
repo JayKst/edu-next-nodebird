@@ -1,0 +1,24 @@
+{
+  "name": "react-nodebird-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jkyang",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^13.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-plugin-hooks": "^0.4.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.11",
+    "nodemon": "^2.0.20",
+    "webpack": "^5.75.0"
+  }
+}
