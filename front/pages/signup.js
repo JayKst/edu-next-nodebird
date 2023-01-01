@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import AppLayout from "../components/AppLayout";
+import React, {useCallback, useState} from 'react';
 import {Form, Input, Checkbox, Button} from "antd";
 import useInput from "../hooks/useInput";
 
@@ -13,7 +12,8 @@ const Signup = () => {
     const [nick, onChangeNick] = useInput('');
     const [password, onChangePassword] = useInput('');
 
-    const onSubmit = () => {
+    const onSubmit = useCallback((e) => {
+        e.preventDefault();
         if (password !== passwordCheck) {
             setPasswordError(true);
             return;
@@ -29,12 +29,12 @@ const Signup = () => {
             passwordCheck,
             term,
         });
-    };
+    },[term, passwordCheck, password]);
 
-    const onChangePasswordCheck = (e) => {
+    const onChangePasswordCheck = useCallback((e) => {
         setPasswordError(e.target.value !== password);
         setPasswordCheck(e.target.value);
-    };
+    },[password]);
 
     const onChangeTerm = (e) => {
         setTermError(false);
@@ -42,7 +42,6 @@ const Signup = () => {
     };
 
     return (
-    <AppLayout>
         <Form onFinish={onSubmit} style={{padding:10}}>
             <div>
                 <label htmlFor='user-id'>아이디</label>
@@ -73,7 +72,6 @@ const Signup = () => {
                 <Button type="primary" htmlType="submit">가입하기</Button>
             </div>
         </Form>
-    </AppLayout>
     );
 }
 export default Signup;
